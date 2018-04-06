@@ -136,23 +136,23 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{RECONHECIMENTO E MONITORAMENTO NÃO INVASIVO DE CARGAS ELÉTRICAS RESIDENCIAL ATRAVÉS DE IA E PROCESSAMENTO DE SINAIS}
-\autor{HIGOR WUTTKE NUNES}
+\titulo{TÍTULO DO TRABALHO}
+\autor{NOME DO AUTOR}
 \local{Caxias do Sul}
 \data{2018}
-\orientador{Prof. Sp. Antônio Cesar de Oliveria Branco}
-%\coorientador{}
+\orientador{Nome do orientador}
+\coorientador{Nome do coorentador}
 \instituicao{
 \begin{figure}[!ht]
     \centering
     \includegraphics{img/logo-uniftec-azul-35x877.png}
 \end{figure}
-CURSO SUPERIOR DE ENGENHARIA DE COMPUTAÇÃO}
+CURSO SUPERIOR DE ...}
 \tipotrabalho{Trabalho acadêmico}
 % O preambulo deve conter o tipo do trabalho, o objetivo,
 % o nome da instituição e a área de concentração
-\preambulo{Trabalho apresentado para o Curso de Engenharia de Computação,
-do Centro Universitário Uniftec, como parte dos requisitos para avaliação da unidade curricular de TCC I}
+\preambulo{Trabalho apresentado para o Curso de ...,
+do Centro Universitário Uniftec, como parte dos requisitos para avaliação da unidade curricular de ...}
 % ---
 
 % ---
@@ -219,11 +219,25 @@ do Centro Universitário Uniftec, como parte dos requisitos para avaliação da 
 % ---
 
 % resumo em português
-% \setlength{\absparsep}{16pt} % ajusta o espaçamento dos parágrafos do resumo
-% \begin{resumo}
+\setlength{\absparsep}{16pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
 
-% \textbf{Palavras-chave}: framework, meta-programação, automatização, reúdo de código, metadados.
-% \end{resumo}
+\lipsum[1] % remova o '\lipsum[1] e insira seu texto
+
+\textbf{Keywords}: lorem. ipsum. dolor.
+
+\end{resumo}
+
+% resumo em inglês
+\begin{resumo}[Abstract]
+    \begin{otherlanguage*}{english}
+
+\lipsum[2] % remova o '\lipsum[2] e insira seu texto
+
+\textbf{Keywords}: lorem. ipsum. dolor.
+
+    \end{otherlanguage*}
+\end{resumo}
 
 % ---
 % inserir lista de ilustrações
@@ -283,21 +297,9 @@ do Centro Universitário Uniftec, como parte dos requisitos para avaliação da 
 % Introdução
 \include{textual/introducao}
 
-% \include{textual/referencial/main}
+\include{textual/desenvolvimento}
 
-\include{textual/desenvolvimento/main}
-
-\include{textual/consideracoes_finais}
-
-\include{textual/orcamento}
-
-% \include{textual/implementacao}
-
-% \include{textual/testes}
-
-% \include{textual/resultados}
-
-% \include{textual/conclusao}
+\include{textual/conclusao}
 
 \postextual
 
