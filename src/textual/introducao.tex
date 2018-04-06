@@ -1,0 +1,133 @@
+% !TEX root = ../main.tex
+\chapter{INTRODUÇÂO}
+As constantes notícias sobre os problemas da matriz energética brasileira, o consequente aumento das taxas de consumo e frequentes trocas de "bandeiras", tem sido constatadas por toda a população, com cada vês mais espanto ao olhar a conta no fim do mês.
+
+Em tempos em que se fala muito sobre internet das coisas, e consumo consciente, surge a necessidade de algum mecanismo ou dispositivo tecnológico, para auxiliar num melhor controle sobre o consumo de energia nas residências.
+
+Os mecanismos atuais de medição de consumo, fornecidos pelas companhias de energia elétrica, não são amigáveis ao consumidor e não servem aos seus interesses, mas sim aos da companhia de energia, para mandar a fatura no fim do mês informando o quanto o consumidor consumiu. 
+
+Por isso, este trabalho tem como objetivo, realizar uma pesquisa sobre as tecnologias possíveis de serem empregadas no desenvolvimento de um dispositivo capaz de monitorar em tempo real, o consumo de energia elétrica de uma residência.
+
+Através das tecnologias pesquisadas e com os conhecimentos adquiridos, pretende-se desenvolver tal dispositivo, de maneira a melhor servir e informar os consumidores, através de informações mais detalhadas sobre o consumo de suas residências, de forma dirigir-los a um consumo mais consciente.
+
+\section{Problema}
+O problema a ser resolvido é a falta de informação e controle sobre o consumo elétrico das residências. Onde para chegar a solução desse problema, através dos objetivos propostos, as seguintes perguntas devem ser respondidas.
+
+\begin{itemize}
+    \item Quais os elementos, grandezas e métricas a serem coletadas da rede elétrica, para compor os dados a serem processados?
+    \item Como, e qual é a melhor maneira para coletar esses dados?
+    \item Como fazer a leitura desses dados a partir de um sistema embarcado?
+    \item Como processar os dados para transformá-los em informações relevantes para o usuário?
+\end{itemize}
+
+\section{Hipóteses}
+
+\begin{itemize}
+    \item Espera-se que existam, no mercado, dispositivos sensores capazes de coletar os dados da rede;
+    \item A leitura da corrente e da tensão elétrica podem ser suficientes para compor as informações necessárias;
+    \item O uso de sistemas embarcados de prototipagem, como Arduíno e Rasbperry Pi podem simplificar e acelerar o desenvolvimento de um protótipo;
+\end{itemize}
+
+
+\section{Objetivo geral}
+
+O objetivo geral desse trabalho é pesquisar e desenvolver uma tecnologia embarcada, capaz de reconhecer e monitorar, de forma individual e não invasiva, o consumo elétrico de cada aparelho de uma residência, com a finalidade de dirigir a um consumo mais consciente da energia elétrica.
+
+\section{Objetivos Específicos}
+\begin{itemize}
+    \item Estudar as tecnologias de monitoramento de energia elétrica, bem como as técnicas de desagregação de cargas elétricas, através do processamento de sinais e a identificação destas, através de técnicas de inteligencia artificial;
+    \item Desenvolver um sistema computacional inteligente, capaz de monitorar e identificar diferentes tipos de cargas elétricas residenciais;
+    \item Desenvolver um sistema embarcado capaz de extrair as informações necessárias sobre as cargas elétricas de uma determinada rede;
+    \item Testar o sistema com dados sintéticos em ambiente simulado;
+    \item Testar o sistema com dados reais em ambiente controlado;
+    \item Mensurar e analisar os resultados dados testes;
+\end{itemize}
+
+\section{Justificativa}
+A energia elétrica é gerada a partir de outras fontes de energia que são classificados, de forma geral em dois tipos: renováveis e não renováveis.
+
+\citeonline{capelli13} comenta que, as fontes não renováveis são aquelas que se baseiam na queima de elementos que não podem ser repostos na natureza em curto prazo. Como por exemplo, petróleo, gás natural, carvão mineral, xisto e outros.
+
+Esse tipo de energia, quando usada de forma descontrolada e não consciente, é extremamente prejudicial ao meio ambiente, pois produzem gases nocivos a natureza que contribuem para o efeito estufa e degradação da camada de ozônio.
+
+Já as fontes renováveis, ainda segundo \citeonline{capelli13}, "conhecidas como fontes limpas, são aquelas cujo elemento principal é facilmente reposto na natureza". Como por exemplo, energia hidráulica, eólica, geotérmica, biomassa e solar.
+
+Porém, as energias hidráulica e biomassa, apesar de serem consideradas limpas, causam forte impacto ao meio ambiente. Onde na hidráulica, o impacto é causado pelo desvio de curso dos rios e alagamento de grandes áreas. E na biomassa, o impacto é causado pela queima desses elementos e pelo desmatamento de grandes áreas para o plantio da matéria prima.
+
+Atualmente as fontes mais limpas de energia, como a eólica e solar, apesar de serem mais baratas e benéficas, ainda não são tão eficientes quanto as demais. Por isso o investimento nesse tipo de energia ainda não é tão atrativo.
+
+Porém, ha uma tendência global crescente em convergir, aos poucos, as atuais fontes não renováveis pelas renováveis e limpas. Há também um movimento, principalmente no exterior, cada vez mais crescente de conduzir os consumidores a um consumo mais consciente da energia elétrica, através de dispositivos e sistemas computacionais que fornecem informações mais detalhadas sobre o consumo.
+
+No Brasil, segundo dados do Ministério de Minas e Energia \citeonline{mme17}, cerca de 70\% da fonte de energia elétrica provem de recursos hídricos, que apesar de serem considerados renováveis, ainda assim são finitos. E com o crescente aumento da demanda por energia elétrica, que aumenta a cada ano, mais usinas serão necessárias para suprir essa demanda. Com isso, chegará uma época em que se esgotarão todos os recursos hídricos.
+
+Segundo a \citeonline{epe17}, em estudo realizado sobre a demanda de energia elétrica para os próximos 10 anos, revelou que:
+\begin{citacao}
+"A evolução do consumo residencial de eletrecidade no Brasil, com expansão média anual de 3.9\% no periodo 2017-2026, pode ser vista como o efeito combinado de um crescimento médio de 2.5\% ao ano do número de consumidores."
+\end{citacao}
+
+Esses dados podem ser observados no gráfico da figura \ref{graf1}, que mostra um crescimento linear até 2016.
+
+\begin{figure}[!ht]
+    \centering
+    \caption{Brasil - Número de consumidores (ligações) residenciais}
+    \label{graf1}
+    \includegraphics[width=1\textwidth]{img/demanda.png}
+    \legend{Fonte: EPE (2017)}
+\end{figure}
+
+Ainda segundo estudo mais recente do \citeonline{epe18}, o consumo brasileiro vai triplicar até 2050, chegando a 1.624 terawatt-hora (Twh). Onde, segundo noticias Ministério do Planejamento \citeonline{pac18}:
+\begin{citacao}
+"Para garantir a toda energia que o cenário apresentado pelo estudo da EPE prevê ser necessária aos brasileiros em 2050, muitos investimentos vêm sendo feitos nos últimos anos na geração e transmissão de energia elétrica, com a construção de usinas hidrelétricas e eólicas, e linhas de transmissão de norte a sul do país, e também em plataformas e sondas de exploração de petróleo e gás natural."
+\end{citacao}
+
+Ainda que o governo esteja ciente da situação e planejando investimentos para suprir as demandas que virão, é preocupante que a demanda por energia elétrica esteja crescendo cada vez mais. Talvez fosse necessário uma preocupação maior em reduzir essa demanda, afim de preservar os recursos e reduzir os investimentos.
+
+Uma maneira de reduzir essa demanda, é a conscientização do consumidor através de informações mais detalhadas sobre o seu consumo.
+
+Por isso, a proposta do presente trabalho, é desenvolver um sistema capaz de fornecer ao consumidor informações mais detalhadas sobre o consumo elétrico da sua residência, afim de dirigir à uma utilização mais consciente e consequentemente a uma redução dos gastos com energia elétrica.
+
+A maioria das pessoas não tem real noção, em valores monetários, de quanto consome um chuveiro elétrico por exemplo. Todos sabem que este é o que mais gasta, porém, ao sair do banho, poucos calculam o tempo que ele ficou ligado, para saber o quanto foi gasto em R\$ (reais).
+
+Com a ajuda do sistema proposto, os consumidores passariam a ter real noção de seus gastos com energia elétrica e passariam a utilizar seus aparelhos domésticos com mais consciência.
+
+Os dados providos pelo sistema também poderia servir como mecanismo contestador e fiscalizador, das companhias fornecedoras de energia elétrica. Onde o consumidor, com as informações de consumo em mãos, poderia confrontar com as da fatura da companhia de energia, para ter certeza de que não está sendo enganado, ou até para constatar algum possível problema de fuga de energia na sua rede.
+
+Estes são apenas alguns benefícios que essa tecnologia pode trazer aos consumidores. Porém, a partir destas, muitas outras funcionalidades podem ser desenvolvidas, como por exemplo, a identificação individual das cargas elétricas de uma residência, permitindo ao consumidor visualizar informações em tempo real sobre o consumo de cada aparelho. Podendo saber por exemplo qual aparelho está ligado no momento, o quanto está consumindo, o quanto já consumiu até o momento e todo o histórico e perfil de consumo de um determinado aparelho.
+
+Atualmente, essa tecnologia já existe no exterior em produtos comercias, porém no brasil, ainda é muito recente e não se ouve muito falar sobre o assunto. Por isso, esse é mais um motivador para o desenvolvimento do projeto ao qual esse trabalho se propõe.
+
+\section{Cronograma de Atividades}
+
+\begin{table}[htb]
+\captionsetup{justification=centering}
+\caption{Cronograma de atividades}
+\label{tbCrono}
+\begin{tabular}{p{5cm}|p{10cm}}
+    \hline
+    \textbf{Data} & \textbf{Atividade} \\
+    \hline
+    22/03/2018 & Cronograma \\
+    \hline
+    29/03/2018 & Justificativa, objetivos, problema e hipóteses\\
+    \hline
+    05/04/2018 & Referencial teórico parte 1 \\
+    \hline
+    12/04/2018 & Referencial teórico parte 2 \\
+    \hline
+    19/04/2018 & Referencial teórico parte 3 \\
+    \hline
+    26/04/2018 & Referencial teórico parte 4 \\
+    \hline
+    03/05/2018 & Metodologia \\
+    \hline
+    10/05/2018 & Implementação parte 1\\
+    \hline
+    17/05/2018 & Implementação parte 2\\
+    \hline
+    31/05/2018 & Testes e resultados \\
+    \hline
+    07/06/2018 & Conclusão introdução e resumo \\
+    \hline
+\end{tabular}
+\legend{Fonte: O Autor(2017)}
+\end{table}

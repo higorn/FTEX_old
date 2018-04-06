@@ -29,6 +29,13 @@
 \LoadClass{abntex2}
 
 \makeatother
+
+% ---
+% Margens
+%---
+\setlrmarginsandblock{3cm}{2cm}{*}
+\setulmarginsandblock{3cm}{2cm}{*}
+\checkandfixthelayout
 % ---
 % Espaçamentos entre linhas e parágrafos
 % ---
@@ -64,12 +71,12 @@
 % -----
 % Configuracoes do TOC
 % -----
-% nivel de profundidade (permite apenas 3 níves)
-\setsecnumdepth{subsection}
-\settocdepth{subsection}
-\setcounter{tocdepth}{3}
-\setcounter{secnumdepth}{3}
-\maxsecnumdepth{subsection}
+% nivel de profundidade (permite apenas 5 níves)
+\setsecnumdepth{paragraph}
+\settocdepth{paragraph}
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\maxsecnumdepth{paragraph}
 
 % sumário
 
@@ -109,8 +116,10 @@
 	% Identação do sumário para os três níveis
 	\cftsetindents{part}{0em}{\cftlastnumwidth}
 	\cftsetindents{chapter}{0em}{\cftlastnumwidth}
-	\cftsetindents{section}{0em}{\cftlastnumwidth}
-	\cftsetindents{subsection}{0em}{\cftlastnumwidth}
+    \cftsetindents{section}{0em}{2em}{\cftlastnumwidth}
+	\cftsetindents{subsection}{0em}{2.8em}{\cftlastnumwidth}
+	\cftsetindents{subsubsection}{0em}{3.8em}{\cftlastnumwidth}
+	\cftsetindents{paragraph}{0em}{4.5em}{\cftlastnumwidth}
 %	\cftsetindents{part}{0em}{\cftlastnumwidth}
 %	\cftsetindents{chapter}{0em}{2em}
 %	\cftsetindents{section}{1em}{2.5em}
@@ -148,6 +157,9 @@
 	%
 	\renewcommand{\cftsubsectionfont}{\bfseries}
 	\renewcommand{\cftsubsectionpagefont}{\cftsubsectionfont}
+	
+	\renewcommand{\cftsubsubsectionfont}{\normalfont}
+	\renewcommand{\cftsubsubsectionpagefont}{\cftsubsubsectionfont}
 }{}
 
 % -----
@@ -189,17 +201,18 @@
 % alterando a capa
 \renewcommand{\imprimircapa}{%
   \begin{capa}%
-    \vspace*{2cm}
+    \vspace*{-2cm}
     \center
-    \ABNTEXchapterfont\bfseries\Large\imprimirinstituicao
+    \ABNTEXchapterfont\bfseries\large\imprimirinstituicao
 
-    \vspace*{4cm}
+    % \vspace*{4cm}
+    \vfill
 
-    {\ABNTEXchapterfont\textbf{\Large\imprimirautor}}
+    {\ABNTEXchapterfont\textbf{\large\imprimirautor}}
 
     \vfill
     \begin{center}
-    \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+    \ABNTEXchapterfont\bfseries\large\imprimirtitulo
     \end{center}
     \vfill
 
@@ -207,7 +220,7 @@
 
     \large\imprimirdata
 
-    \vspace*{1cm}
+    % \vspace*{1cm}
   \end{capa}
 }
 
@@ -217,39 +230,42 @@
 
 \renewcommand{\folhaderostocontent}{
 \begin{center}
-\vspace*{2cm}
-{\ABNTEXchapterfont\bfseries\Large\imprimirautor}
+% \vspace*{2cm}
+{\ABNTEXchapterfont\bfseries\normalsize\imprimirautor}
 
-\vspace*{\fill}\vspace*{\fill}
+% \vspace*{\fill}\vspace*{\fill}
+\vfill
 
 \begin{center}
-\ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+\ABNTEXchapterfont\bfseries\large\imprimirtitulo
 \end{center}
 
-\vspace*{\fill}
+% \vspace*{\fill}
+\vfill
 
 \abntex@ifnotempty{\imprimirpreambulo}{%
   \hspace{.45\textwidth}
   \begin{minipage}{.5\textwidth}
-  \imprimirpreambulo
+  \ABNTEXchapterfont\bfseries\normalsize\imprimirpreambulo
   \end{minipage}%
-  \vspace*{\fill}
+%   \vspace*{\fill}
+  \vfill
 }%
 
-{\large\imprimirorientadorRotulo~\imprimirorientador\par}
+{\bfseries\normalsize\imprimirorientadorRotulo~\imprimirorientador\par}
 
 \abntex@ifnotempty{\imprimircoorientador}{%
-  {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
+  {\bfseries\normalsize\imprimircoorientadorRotulo~\imprimircoorientador}%
 }%
 
 \vspace*{\fill}
 
-{\large\imprimirlocal}
+{\bfseries\normalsize\imprimirlocal}
 
 \par
 
-{\large\imprimirdata}
-\vspace*{1cm}
+{\bfseries\normalsize\imprimirdata}
+% \vspace*{1cm}
 \end{center}
 }
 \makeatother
