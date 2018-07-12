@@ -29,7 +29,6 @@
 \LoadClass{abntex2}
 
 \makeatother
-
 % ---
 % Margens
 %---
@@ -39,6 +38,8 @@
 % ---
 % Espaçamentos entre linhas e parágrafos
 % ---
+
+\renewcommand{\baselinestretch}{1.5}
 
 % ---
 % O tamanho do parágrafo é dado por:
@@ -268,5 +269,6 @@
 % \vspace*{1cm}
 \end{center}
 }
+
 \makeatother
 

@@ -32,12 +32,16 @@
 
 \usepackage{float}
 \usepackage{multirow}
-\usepackage[skip=0pt]{caption}
+\usepackage[skip=2pt,font=scriptsize]{caption}
 \usepackage{nomencl}
-%\usepackage{subfigure}
+\usepackage{subfigure}
 \usepackage{pdflscape}
 \usepackage{pdfpages}
 \usepackage{xcolor}
+\usepackage{textgreek}
+\usepackage{amsmath}
+\usepackage{nccmath}
+\usepackage{setspace}
 % Definindo novas cores
 \definecolor{verde}{rgb}{0.25,0.5,0.35}
 \definecolor{jpurple}{rgb}{0.5,0,0.35}
@@ -79,7 +83,6 @@
         frameround=tttt,
         showstringspaces=false,
         tabsize=2,
-        belowskip=-12pt
     }
 }
 \renewcommand{\lstlistingname}{Listagem}
@@ -137,11 +140,11 @@
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
 \titulo{TÍTULO DO TRABALHO}
-\autor{NOME DO AUTOR}
+\autor{FULANO DE TAL}
 \local{Caxias do Sul}
 \data{2018}
-\orientador{Nome do orientador}
-\coorientador{Nome do coorentador}
+\orientador{Prof. }
+%\coorientador{}
 \instituicao{
 \begin{figure}[!ht]
     \centering
@@ -218,27 +221,58 @@ do Centro Universitário Uniftec, como parte dos requisitos para avaliação da 
 \imprimirfolhaderosto*
 % ---
 
+\makeatletter
+\begin{folhadeaprovacao}
+\begin{center}
+    {\ABNTEXchapterfont\bfseries\normalsize\imprimirautor}
+    \vfill
+
+    \ABNTEXchapterfont\bfseries\large\imprimirtitulo
+\end{center}
+
+% \vspace*{\fill}
+\vfill
+
+\abntex@ifnotempty{\imprimirpreambulo}{%
+  \hspace{.35\textwidth}
+  \begin{minipage}{.5\textwidth}
+  \ABNTEXchapterfont\bfseries\normalsize\imprimirpreambulo
+  \end{minipage}%
+%   \vspace*{\fill}
+  \vfill
+}%
+\ABNTEXchapterfont\bfseries\normalsize{}Aprovado em:
+\vfill
+\begin{center}
+    \ABNTEXchapterfont\bfseries\normalsize{}BANCA EXAMINADORA \\
+    \assinatura{{\bfseries\normalsize{}Professor Orientador: }}
+    \assinatura{{\bfseries\normalsize{}Professor Avaliador: }}
+    \assinatura{{\bfseries\normalsize{}Professor Avaliador: }}
+    \vspace*{\fill}
+    {\bfseries\normalsize\imprimirlocal}
+    \par
+    {\bfseries\normalsize\imprimirdata}
+\end{center}
+\end{folhadeaprovacao}
+\makeatother
+
 % resumo em português
 \setlength{\absparsep}{16pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
+Template Latex para o modelo FTEC.
 
-\lipsum[1] % remova o '\lipsum[1] e insira seu texto
-
-\textbf{Keywords}: lorem. ipsum. dolor.
-
+\textbf{Palavras-chave}: Template. Latex.
 \end{resumo}
 
 % resumo em inglês
 \begin{resumo}[Abstract]
     \begin{otherlanguage*}{english}
+    The book is on the table
 
-\lipsum[2] % remova o '\lipsum[2] e insira seu texto
-
-\textbf{Keywords}: lorem. ipsum. dolor.
-
+\textbf{Keywords}: Book. Table.
     \end{otherlanguage*}
 \end{resumo}
-
+  
 % ---
 % inserir lista de ilustrações
 % ---
@@ -282,11 +316,23 @@ do Centro Universitário Uniftec, como parte dos requisitos para avaliação da 
 
  \captionsetup[table]{
   labelsep = newline,
-  justification=justified,
+%   justification=justified,
+  justification=centering,
+%   font=bf,
   singlelinecheck=false,%%%%%%% a single line is centered by default
   labelsep=colon,%%%%%%
-  skip = \medskipamount}
+ % skip = \medskipamount
+}
   
+  
+\captionsetup[figure]{
+  labelsep=colon,%%%%%%
+%   font=bf,
+%   labelfont=bf,
+  justification=centering,
+  singlelinecheck=false,%%%%%%% a single line is centered by default
+%   skip = \medskipamount
+}
   
 % ----------------------------------------------------------
 % ELEMENTOS TEXTUAIS
@@ -297,9 +343,7 @@ do Centro Universitário Uniftec, como parte dos requisitos para avaliação da 
 % Introdução
 \include{textual/introducao}
 
-\include{textual/desenvolvimento}
-
-\include{textual/conclusao}
+\include{textual/desenvolvimento/main}
 
 \postextual
 
@@ -307,6 +351,8 @@ do Centro Universitário Uniftec, como parte dos requisitos para avaliação da 
 % Bibliografia
 \bibliography{bibliografia}
 % ---
+
+%\include{postextual/apendices}
 
 % ---
 % Anexo 1 manual do usuário
